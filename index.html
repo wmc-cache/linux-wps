@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="demohtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- use Layui -->
+    <link rel="stylesheet" href="./common/layui/css/layui.css" />
+    <script src="./common/layui/layui.js"></script>
+    <!-- use Layui -->
+
+    <script type="text/javascript" src="./src/demo.js"></script>
+    <link rel="stylesheet" href="./src/demo.css" type="text/css" />
+
+    <title>WPS-Plugin For Linux</title>
+</head>
+
+<body id="demobody">
+    <div class="layui-row layui-col-space10" id="divLayout_bar">
+        <div class="layui-col-xs3 layui-hide-xs">
+            <ul class="layui-nav" lay-filter="filter_tab" id="ul_tab">
+                <li class="layui-nav-item layui-this"><a id="a_wps" href="javascript:;">文字</a></li>
+                <li class="layui-nav-item"><a id="a_et" href="javascript:;">表格</a></li>
+                <li class="layui-nav-item"><a id="a_wpp" href="javascript:;">演示</a></li>
+            </ul>
+        </div>
+        <!-- itemShowType: -1 一直显示; 0 wps页面显示; 1 wpp页面显示; 2 et页面显示 -->
+        <div class="layui-col-xs9 layui-hide-xs" id="divLayout_docBar">
+            <a itemShowType="-1" id="l_aboutDoc">相关文档:</a>
+            <a itemShowType="0" href='../doc/WPS.CHM' target="_blank">WPS文字二次开发文档.chm</a>
+            <a itemShowType="1" href='../doc/WPP.CHM' target="_blank">WPS演示二次开发文档.chm</a>
+            <a itemShowType="2" href='../doc/ET.CHM' target="_blank">WPS表格二次开发文档.chm</a>
+            <a itemShowType = "0" href="../doc/四院二次开发接口文档/GBT 33478-2016 党政机关电子公文应用接口规范.pdf" target="_blank">党政机关电子公文应用接口规范.pdf</a>
+            <a itemShowType="0" href="../doc/四院二次开发接口文档/接口说明文档-20140313.pdf" target="_blank">WPS封装接口文档.pdf</a>
+            <a itemShowType="-1" href="../doc/wps-netscape-api/html/index.html" target="_blank">WPS类说明文档(偏开发)</a>
+        </div>
+    </div>
+    <div id="iframediv">
+        <iframe src="./src/wps/wps.html" id="iframe_wps" frameborder="0" width="100%" height="0%"></iframe>
+        <iframe src="./src/wpp/wpp.html" id="iframe_wpp" frameborder="0" width="100%" height="0%"></iframe>
+        <iframe src="./src/et/et.html" id="iframe_et" frameborder="0" width="100%" height="0%"></iframe>
+    </div>
+</body>
+
+</html>

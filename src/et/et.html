@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="itemhtml">
+
+<head>
+    <title>title</title>
+
+    <!-- use Layui -->
+    <link rel="stylesheet" href="../../common/layui/css/layui.css" />
+    <script src="../../common/layui/layui.js"></script>
+    <!-- use Layui -->
+
+    <script type="text/javascript" src="../itemcommon.js"></script>
+    <script type="text/javascript" src="./et.js"></script>
+    <link rel="stylesheet" href="../demo.css" type="text/css">
+</head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<body id="itembody">
+    <!-- style="height:80%;" -->
+    <div class="layui-row layui-col-space10" id="topLayoutDiv">
+        <div class="layui-col-xs1 layui-hide-xs" id="optLayoutDiv">
+            <div class="layui-collapse" lay-accordion id="btnContainer">
+                <div class="layui-colla-item">
+                    <h2 class="layui-colla-title">常用操作</h2>
+                    <div class="layui-colla-content layui-show">
+                        <div class="layui-btn-container">
+                            		<button class="layui-btn layui-btn-sm" onclick="_InitEt()">初始化ET</button>
+									<button class="layui-btn layui-btn-sm" onclick="_GetName()">获取APP名</button>
+									<button class="layui-btn layui-btn-sm" onclick="_GetUserName()">获取用户名</button>
+									<button class="layui-btn layui-btn-sm" onclick="_AddFile()">新建文档</button>
+									<button class="layui-btn layui-btn-sm" onclick="_RegisterWorkbookBeforeBrforeSaveEvent()">注册保存事件</button>
+									<button class="layui-btn layui-btn-sm" onclick="_unRegisterDocumentBrforeSaveEvent()">取消注册保存事件</button>
+									<button class="layui-btn layui-btn-sm" onclick="_RegisterBeforeCloseEvent()">注册关闭事件</button>									
+									<button class="layui-btn layui-btn-sm" onclick="_AddCommandBarButton()">CommandBar测试</button>
+									<button class="layui-btn layui-btn-sm" onclick="_InsertPic()">插入图片</button>
+									<button class="layui-btn layui-btn-sm" onclick="_shapesitem()">设置形状属性</button>
+									<button class="layui-btn layui-btn-sm" onclick="_Copy()">复制</button>
+									<button class="layui-btn layui-btn-sm" onclick="_DisableCtrlc()">禁用复制</button>
+									<button class="layui-btn layui-btn-sm" onclick="_EnableCtrlc()">启用复制</button>
+									<button class="layui-btn layui-btn-sm" onclick="_DisableCtrlx()">禁用剪切</button>
+									<button class="layui-btn layui-btn-sm" onclick="_EnableCtrlx()">启用剪切</button>
+									<button class="layui-btn layui-btn-sm" onclick="_OpenDocs_multiple()">打开并实例化多个文档</button>	
+									<button class="layui-btn layui-btn-sm" onclick="_OpenDocs_multiple_switch()">切换文档</button>
+									<button class="layui-btn layui-btn-sm" onclick="_setForceBackUpDisabled()">关闭备份</button>	
+									<button class="layui-btn layui-btn-sm" onclick="_setForceBackUpEnabled()">开启备份</button>		
+									<button class="layui-btn layui-btn-sm" onclick="_setToolbarAllVisibleT()">显示工具条</button>
+									<button class="layui-btn layui-btn-sm" onclick="_setToolbarAllVisibleF()">隐藏工具条</button>
+									<button class="layui-btn layui-btn-sm" onclick="_FullScreen()">全屏</button>
+									<button class="layui-btn layui-btn-sm" onclick="_testApplicationExopen()">嵌入字体</button>
+									<button class="layui-btn layui-btn-sm" onclick="_testApplicationExopenclose()">不嵌入字体</button>
+									<button class="layui-btn layui-btn-sm" onclick="_AddRow()">添加行</button>
+									<button class="layui-btn layui-btn-sm" onclick="_deleteRow()">删除行</button>
+									<button class="layui-btn layui-btn-sm" onclick="_GetTempPath()">获取临时文件夹路径</button>
+									<button class="layui-btn layui-btn-sm" onclick="_setTmpFilepath()">设置临时文件路径</button>
+									<button class="layui-btn layui-btn-sm" onclick="_RegisterPrintOutPageSetEvent()">注册输出打印区域事件</button>
+									<button class="layui-btn layui-btn-sm" onclick="_exitEditMode()">419086_退出编辑模式</button>		
+									<button class="layui-btn layui-btn-sm" onclick="_protectAllSheet()">419086_保护所有工作表</button>
+									<button class="layui-btn layui-btn-sm" onclick="_unProtectAllSheet()">419086_解除保护所有工作表</button>											
+									
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="layui-colla-item">
+                    <h2 class="layui-colla-title">单元格设置</h2>
+                    <div class="layui-colla-content">
+                        <div class="layui-btn-container">
+                            <button class="layui-btn layui-btn-sm" onclick="_Range_Value()">单元格设值</button>
+                            <button class="layui-btn layui-btn-sm" onclick="_Range_Merge()">合并单元格</button>
+                            <button class="layui-btn layui-btn-sm" onclick="_Range_unMerge()">取消合并单元格</button>
+                            <button class="layui-btn layui-btn-sm" onclick="_setRangeFormat()">设置单元格格式</button>
+                            <button class="layui-btn layui-btn-sm" onclick="_Range_Row_Col()">设置单元格行高列宽</button>
+                        </div>
+                    </div>
+                </div>
+				
+                <div class="layui-colla-item">
+                    <h2 class="layui-colla-title">本地文件</h2>
+                    <div class="layui-colla-content">
+                        <div class="layui-btn-container">
+                            <button class="layui-btn layui-btn-sm" onclick="_SaveFile()">保存本地</button>
+							<button class="layui-btn layui-btn-sm" onclick="_SaveFile2()">保存本地弹框</button>
+							<button class="layui-btn layui-btn-sm" onclick="_SaveFile3()">保存本地弹框默认名字</button>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocument_readOnly()">只读打开本地</button>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocument_readWrite()">可编辑打开本地</button>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocument2_readOnly()">只读打开本地_加密文档</button>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocument2_readWrite()">可编辑打开本地_加密文档</button>
+							<button class="layui-btn layui-btn-sm" onclick="_saveAsBase64Str()">保存到base64</button>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentFromBase64Str()">从base64打开</button>
+							<button class="layui-btn layui-btn-sm" onclick="_Close()">保存并关闭文档</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-colla-item">
+                    <h2 class="layui-colla-title">远程文件</h2>
+                    <div class="layui-colla-content">
+                        <div class="layui-btn-container">
+                            <button class="layui-btn layui-btn-sm" onclick="_saveURL_s()">保存远程不落地_当前打开</button>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote_s()">打开远程文档不落地</button>
+							<button class="layui-btn layui-btn-sm" onclick="_SaveUrl()">保存远程</button>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote_readOnly()">只读打开远程</button>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote_readWrite()">可编辑打开远程</button>
+							<button class="layui-btn layui-btn-sm" onclick="_OpenRemote()">打开远程_oldinterface</button>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote1_readOnly()">只读打开远程_加密文档</button>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote1_readWrite()">可编辑打开远程_加密文档</button>
+							<button class="layui-btn layui-btn-sm" onclick="_SendDataToServer()">上传到远程</button>
+							<button class="layui-btn layui-btn-sm" onclick="_DownLoadServerFile()">下载远程文档</button>
+							<button class="layui-btn layui-btn-sm" onclick="_saveURL_CustomParam()">保存到远程_上传自定义数据</button>
+							<button class="layui-btn layui-btn-sm" onclick="_saveURL_https()">保存到远程_https</button>		
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote_readWrite_https()">可编辑打开远程_https</button>		
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote_readOnly_https()">只读打开远程_https</button>
+							<button class="layui-btn layui-btn-sm" onclick="_UploadFileToServer()">上传远程_新</button>
+							<button class="layui-btn layui-btn-sm" onclick="_DownloadFileFromServer()">下载远程_新</button>
+							<button class="layui-btn layui-btn-sm" onclick="_SaveDocumentToServer()">保存远程_新</button>							
+							<button class="layui-btn layui-btn-sm" onclick="_OpenDocumentFromServer()">打开远程_新</button>										
+			
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="layui-colla-item">
+                    <h2 class="layui-colla-title">远程文件-http-session</h2>
+                    <div class="layui-colla-content">
+                        <div class="layui-btn-container">
+                            <button class="layui-btn layui-btn-sm" onclick="_saveURL_s_FormData()">保存远程不落地_当前打开_带session</button>
+							<button class="layui-btn layui-btn-sm" onclick="_saveURL_s_FormData_rediect()">保存远程不落地_当前打开_重定向带session</button>
+
+							<br/><br/>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote_s_FormData()">打开远程文档不落地带session</button>					
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote_s_rediect()">打开远程文档不落地_重定向带session</button>	
+
+							<br/><br/>
+							<button class="layui-btn layui-btn-sm" onclick="_SaveUrl_FormData()">保存远程_带session</button>
+							<button class="layui-btn layui-btn-sm" onclick="_SaveUrl_FormData_rediect()">保存远程_重定向带session</button>	
+
+							<br/><br/>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote_FormData(false)">打开远程文档带session</button>			
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote_rediect(false)">打开远程文档_重定向带session</button>	
+			
+							<br/><br/>
+							<button class="layui-btn layui-btn-sm" onclick="_SendDataToServer_FormData()">上传到远程_带session</button>
+							<button class="layui-btn layui-btn-sm" onclick="_SendDataToServer_FormData_rediect()">上传到远程_重定向带session</button>
+
+							<br/><br/>
+							<button class="layui-btn layui-btn-sm" onclick="_DownLoadServerFile_FormData()">下载远程文档带session</button>			
+							<button class="layui-btn layui-btn-sm" onclick="_DownLoadServerFile_rediect()">下载远程文档_重定向带session</button>	
+							<br/><br/>
+							<button class="layui-btn layui-btn-sm" onclick="_saveURL_CustomParam_FormData()">保存到远程_上传自定义数据_带session</button>
+							<button class="layui-btn layui-btn-sm" onclick="_saveURL_CustomParam_FormData_rediect()">保存到远程_上传自定义数据_重定向带session</button>
+                        </div>
+                    </div>
+                </div>                 
+ 
+                <div class="layui-colla-item">
+                    <h2 class="layui-colla-title">远程文件-https-session</h2>
+                    <div class="layui-colla-content">
+                        <div class="layui-btn-container">
+
+							<button class="layui-btn layui-btn-sm" onclick="_saveURL_s_FormData_https()">保存远程不落地_当前打开_HTTPS带session</button>
+							<button class="layui-btn layui-btn-sm" onclick="_saveURL_s_FormData_rediect_https()">保存远程不落地_当前打开_重定向HTTPS带session</button>
+							<br/><br/>
+
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote_s_FormData_https()">打开远程文档不落地_HTTPS带session</button>					
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote_s_rediect_https()">打开远程文档不落地_重定向HTTPS</button>	
+							<br/><br/>
+
+							<button class="layui-btn layui-btn-sm" onclick="_saveURL_FormData_https()">保存远程_HTTPS带session</button>
+							<button class="layui-btn layui-btn-sm" onclick="_saveURL_FormData_rediect_https()">保存远程_重定向HTTPS带session</button>
+							<br/><br/>
+
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote_FormData_https(false)">打开远程文档_HTTPS带session</button>					
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote_rediect_https(false)">打开远程文档_重定向HTTPS</button>				
+							<br/><br/>
+
+							<button class="layui-btn layui-btn-sm" onclick="_SendDataToServer_FormData_https()">上传到远程_HTTPS带session</button>  
+							<button class="layui-btn layui-btn-sm" onclick="_SendDataToServer_FormData_rediect_https()">上传到远程_重定向HTTPS带session</button>			
+							<br/><br/>
+
+							<button class="layui-btn layui-btn-sm" onclick="_DownLoadServerFile_FormData_https()">下载远程文档_HTTPS带session</button>				
+							<button class="layui-btn layui-btn-sm" onclick="_DownLoadServerFile_rediect_https()">下载远程文档_重定向HTTPS带session</button>	
+							<br/><br/>	
+							
+							<button class="layui-btn layui-btn-sm" onclick="_saveURL_CustomParam_FormData_https()">保存到远程_HTTPS上传自定义数据_带session</button>
+							<button class="layui-btn layui-btn-sm" onclick="_saveURL_CustomParam_FormData_rediect_https()">保存到远程_HTTPS上传自定义数据_重定向带session</button>
+
+                        </div>
+                    </div>
+                </div>
+
+ 
+            </div>
+        </div>
+        <div class="layui-col-xs1 " id="wpsLayoutDiv">
+            <div id="et"></div>
+        </div>
+    </div>
+    <div class="layui-row layui-col-space10" id="bottomLayoutDiv">
+        <div class="layui-col-xs1 layui-hide-xs" id="codeDocLayoutDiv">
+            <fieldset class="layui-elem-field" id="codeDocElemDiv">
+                <legend id="codeDocTitle">函数说明</legend>
+                <p id="codeDoc"></p>
+            </fieldset>
+        </div>
+        <div class="layui-col-xs1 layui-hide-xs" id="codeLayoutDiv">
+            <fieldset class="layui-elem-field" id="codeElemDiv">
+                <legend id="codeTitle">函数代码</legend>
+				<pre id="codepre"><code id="code"></code></pre>
+            </fieldset>
+        </div>
+    </div>
+</body>
+
+</html>

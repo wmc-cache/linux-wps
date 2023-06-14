@@ -1,0 +1,80 @@
+<!DOCTYPE html 
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="itemhtml">
+
+<head>
+	<title>title</title>
+
+	<!-- use Layui -->
+	<link rel="stylesheet" href="../../common/layui/css/layui.css" />
+	<script src="../../common/layui/layui.js"></script>
+	<!-- use Layui -->
+
+	<script type="text/javascript" src="../itemcommon.js"></script>
+	<script type="text/javascript" src="./wpp.js"></script>
+	<link rel="stylesheet" href="../demo.css" type="text/css">
+</head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<body id="itembody">
+	<!-- style="height:80%;" -->
+	<div class="layui-row layui-col-space10" id="topLayoutDiv">
+		<div class="layui-col-xs1 layui-hide-xs" id="optLayoutDiv">
+			<div class="layui-collapse" lay-accordion id="btnContainer">
+				<div class="layui-colla-item">
+					<h2 class="layui-colla-title">效率测试-上传</h2>
+					<div class="layui-colla-content layui-show">
+						<div class="layui-btn-container">
+							<button class="layui-btn layui-btn-sm" onclick="_InitWpp()">初始化wpp</button>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentF()">打开本地文档_100kb</button>
+							<button class="layui-btn layui-btn-sm" onclick="_saveURL()">保存到远程_100kb</button>
+							<button class="layui-btn layui-btn-sm" onclick="_saveURL_s()">保存到远程不落地_100kb</button>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote()">打开远程文档_100kb</button>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote_s()">打开远程文档不落地_100kb</button>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentF_10mb()">打开本地文档_10mb</button>
+							<button class="layui-btn layui-btn-sm" onclick="_saveURL_10mb()">保存到远程_10mb</button>
+							<button class="layui-btn layui-btn-sm" onclick="_saveURL_s_10mb()">保存到远程不落地_10mb</button>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote_10mb()">打开远程文档_10mb</button>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote_s_10mb()">打开远程文档不落地_10mb</button>							
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentF_50mb()">打开本地文档_50mb</button>
+							<button class="layui-btn layui-btn-sm" onclick="_saveURL_50mb()">保存到远程_50mb</button>
+							<button class="layui-btn layui-btn-sm" onclick="_saveURL_s_50mb()">保存到远程不落地_50mb</button>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote_50mb()">打开远程文档_50mb</button>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote_s_50mb()">打开远程文档不落地_50mb</button>							
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentF_100mb()">打开本地文档_100mb</button>
+							<button class="layui-btn layui-btn-sm" onclick="_saveURL_100mb()">保存到远程_100mb</button>
+							<button class="layui-btn layui-btn-sm" onclick="_saveURL_s_100mb()">保存到远程不落地_100mb</button>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote_100mb()">打开远程文档_100mb</button>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote_s_100mb()">打开远程文档不落地_100mb</button>							
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentF_200mb()">打开本地文档_200mb</button>
+							<button class="layui-btn layui-btn-sm" onclick="_saveURL_200mb()">保存到远程_200mb</button>
+							<button class="layui-btn layui-btn-sm" onclick="_saveURL_s_200mb()">保存到远程不落地_200mb</button>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote_200mb()">打开远程文档_200mb</button>
+							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote_s_200mb()">打开远程文档不落地_200mb</button>							
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="layui-col-xs1 " id="wpsLayoutDiv">
+			<div id="wpp"></div>
+		</div>
+	</div>
+	<div class="layui-row layui-col-space10" id="bottomLayoutDiv">
+		<div class="layui-col-xs1 layui-hide-xs" id="codeDocLayoutDiv">
+			<fieldset class="layui-elem-field" id="codeDocElemDiv">
+				<legend id="codeDocTitle">函数说明</legend>
+				<p id="codeDoc"></p>
+			</fieldset>
+		</div>
+		<div class="layui-col-xs1 layui-hide-xs" id="codeLayoutDiv">
+			<fieldset class="layui-elem-field" id="codeElemDiv">
+				<legend id="codeTitle">函数代码</legend>
+				<pre id="codepre"><code id="code"></code></pre>
+			</fieldset>
+		</div>
+	</div>
+</body>
+
+</html>
