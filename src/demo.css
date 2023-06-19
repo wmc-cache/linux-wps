@@ -6,11 +6,11 @@ html#itemhtml {
 }
 
 body#demobody{
-    height: 100%;   
+    height: 100%;
     width: 99%;
 }
 body#itembody {
-    height: 100%;    
+    height: 100%;
 }
 
 
@@ -25,26 +25,26 @@ div#iframediv {
 
 
 div#divLayout_bar {
-    background-color: transparent; 
-    border-bottom: 1px solid rgb(230, 230, 230); 
+    background-color: transparent;
+    border-bottom: 1px solid rgb(230, 230, 230);
     height: 65px;
 }
 
 ul#ul_tab {
-    background-color: white; 
+    background-color: white;
     color: black;
 }
 
 div#divLayout_docBar {
-    height: 100%; 
-    padding-top: 20px; 
+    height: 100%;
+    padding-top: 20px;
     padding-right: 40px;
     text-align: left;
 }
 
 div#divLayout_docBar a {
     margin-left: none;
-    margin-right: 10px; 
+    margin-right: 10px;
     color: #1E9FFF;
     text-decoration: underline;
 }
@@ -78,25 +78,19 @@ body#itembody {
 }
 
 #topLayoutDiv {
-    height: 85%; 
-    min-height: 85%;
-    max-height: 85%;
-    width: 98%;         /* 设置成 100% 会出现 横向滚动条 */
-    margin-left: 20px;
-    margin-right: 20px;
+   width: 100%;
+   height: 100%;
 }
 /* 设置列宽百分比, 和为 100% */
 div#optLayoutDiv {
     height: 100%;
-    width: 13%;     
+    width: 13%;
     overflow-y: auto;
     overflow-x: hidden;
 }
 div#wpsLayoutDiv {
     height: 100%;
-    width: 87%;
-    padding-left: 30px;
-    padding-right: 20px;
+    width: 100%;
 }
 div#docLayoutDiv {
     height: 100%;
@@ -110,7 +104,7 @@ div#et {
 
 
 #bottomLayoutDiv {
-    height: 15%; 
+    height: 15%;
     min-height: 15%;
     max-height: 15%;
     width: 98%;         /* 设置成 100% 会出现 横向滚动条 */
@@ -128,10 +122,10 @@ div#et {
 
 /* 设置列宽百分比, 和为 100% */
 #codeDocLayoutDiv {
-    width: 30%;  
+    width: 30%;
 }
 #codeLayoutDiv {
-    width: 70%;  
+    width: 70%;
 }
 
 legend#codeDocTitle,
@@ -162,7 +156,7 @@ pre#codepre {
     padding-right: 5px;
     width: 100%;
     height: auto;
-    word-wrap: break-word; 
+    word-wrap: break-word;
     word-break: break-all;
     white-space:pre-wrap;
     outline: none;

@@ -70,10 +70,9 @@ function openDocumentT() {
 var _openDocumentT = new CreateFunction("只读模式打开本地文档", openDocumentT, []);
 
 function openDocumentRemote() {
-	var url = prompt("请输入要打开的文件地址:")
-	console.log(url)
-    var aa = app.openDocumentRemote(url, false);
-    alert(aa);
+    window.setTimeout(function () {
+        app.openDocumentRemote(parent.location.search.replace('?', ''), false);
+    }, 1000)
 }
 var _openDocumentRemote = new CreateFunction("打开远程文档", openDocumentRemote, []);
 

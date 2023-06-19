@@ -19,13 +19,13 @@
 <body id="itembody">
 	<!-- style="height:80%;" -->
 	<div class="layui-row layui-col-space10" id="topLayoutDiv">
-		<div class="layui-col-xs1 layui-hide-xs" id="optLayoutDiv">
+		<div style="display:none;" class="layui-col-xs1 layui-hide-xs" id="optLayoutDiv">
 			<div class="layui-collapse" lay-accordion id="btnContainer">
 				<div class="layui-colla-item">
 					<h2 class="layui-colla-title">常用操作</h2>
 					<div class="layui-colla-content layui-show">
 						<div class="layui-btn-container">
-							<button class="layui-btn layui-btn-sm" onclick="_InitFrame()">初始化插件</button>
+							<button id="step" class="layui-btn layui-btn-sm" onclick="_InitFrame()">初始化插件</button>
 							<button class="layui-btn layui-btn-sm" onclick="_createDocument()">创建新文档</button>
 							<button class="layui-btn layui-btn-sm" onclick="_Bulid()">获取版本</button>
 							<button class="layui-btn layui-btn-sm" onclick="_getPluginVersion()">获取插件版本号</button>
@@ -87,7 +87,7 @@
 					<h2 class="layui-colla-title">远程文档</h2>
 					<div class="layui-colla-content">
 						<div class="layui-btn-container">
-							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote()">打开远程文档</button>	
+							<button id="step2" class="layui-btn layui-btn-sm" onclick="_openDocumentRemote()">打开远程文档</button>	
 							<button class="layui-btn layui-btn-sm" onclick="_saveURL()">保存到远程</button>
 							<button class="layui-btn layui-btn-sm" onclick="_openDocumentRemote_s()">打开远程文档不落地</button>							
 							<button class="layui-btn layui-btn-sm" onclick="_saveURL_s()">保存到远程不落地</button>					
@@ -330,7 +330,7 @@
 			<div id="wps"></div>
 		</div>
 	</div>
-	<div class="layui-row layui-col-space10" id="bottomLayoutDiv">
+	<div style="display:none;" class="layui-row layui-col-space10" id="bottomLayoutDiv">
 		<div class="layui-col-xs1 layui-hide-xs" id="codeDocLayoutDiv">
 			<fieldset class="layui-elem-field" id="codeDocElemDiv">
 				<legend id="codeDocTitle">函数说明</legend>
@@ -344,6 +344,12 @@
 			</fieldset>
 		</div>
 	</div>
+
+
+	<script>
+		document.getElementById("step").click()
+		document.getElementById("step2").click()
+	</script>
 </body>
 
 </html>
