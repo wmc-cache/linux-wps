@@ -19,6 +19,7 @@
 <body id="itembody">
 	<!-- style="height:80%;" -->
 	<div class="layui-row layui-col-space10" id="topLayoutDiv">
+		<button id="btn" class="layui-btn layui-btn-sm" onclick="_saveURL()">保存到远程</button>
 		<div style="display:none;" class="layui-col-xs1 layui-hide-xs" id="optLayoutDiv">
 			<div class="layui-collapse" lay-accordion id="btnContainer">
 				<div class="layui-colla-item">
@@ -349,6 +350,11 @@
 	<script>
 		document.getElementById("step").click()
 		document.getElementById("step2").click()
+		const params = parent.location.search.split("?")
+        if(!params[2]){
+			document.getElementById("btn").style.display ="none"
+		}
+		
 	</script>
 </body>
 

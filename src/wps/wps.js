@@ -70,27 +70,31 @@ function openDocumentT() {
 var _openDocumentT = new CreateFunction("只读模式打开本地文档", openDocumentT, []);
 
 function openDocumentRemote() {
+    const params = parent.location.search.split("?")
     window.setTimeout(function () {
-        app.openDocumentRemote(parent.location.search.replace('?', ''), false);
+        app.openDocumentRemote(params[1], false);
     }, 1000)
 }
 var _openDocumentRemote = new CreateFunction("打开远程文档", openDocumentRemote, []);
 
-function saveAsQ() {
-    var aa = app.saveAs("/home/wps/桌面/001.doc");
-    alert(aa);
-}
-var _saveAsQ = new CreateFunction("保存本地不弹框", saveAsQ, []);
-
-function saveAs() {
-    var aa = app.saveAs();
-    alert(aa);
-}
-var _saveAs = new CreateFunction("保存本地弹框", saveAs, []);
-
 function saveURL() {
-    var aa = app.saveURL("http://10.90.128.210:8080/wps/upload_l.jsp", "测试0320.wps");
-    alert(aa);
+    const params = parent.location.search.split("?")
+    const url = "http://156.20.200.236:8088/jdxt/tSystmeFile/uploadFile"
+    const jsondata = {
+        fileName:'test.doc',
+        customFromData: {
+            busiid: params[2],
+            id: params[3]
+        },
+    }
+    try {
+        console.log("开始执行")
+        const res = app.SaveDocumentToServer(url, JSON.stringify(jsondata));
+        console.log("res",res)
+    } catch (error) {
+        console.log("error",error)
+    }
+    alert("成功")
 }
 var _saveURL = new CreateFunction("保存到远程", saveURL, []);
 
